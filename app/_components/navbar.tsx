@@ -13,7 +13,7 @@ function Navbar() {
         {/* Logo - left me chipka hua */}
         <Link href="/" className="flex items-center -ml-12">
           <Image
-            src="/image/minelogo.png"
+            src="/image/mineLogo.png"
             alt="Amit Logo"
             width={200}
             height={60}
