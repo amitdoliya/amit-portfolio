@@ -149,7 +149,7 @@ const Footer = () => {
                 </svg>
               </div>
 
-              <p>• Jaipur, Rajasthan, 302012 </p>
+              <p>• Jaipur, Rajasthan </p>
             </div>
           </div>
         </div>
@@ -254,13 +254,6 @@ const Footer = () => {
           <div className="border border-gray-700 my-6"></div>
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 mt-6 space-y-2 md:space-y-0">
             <div className="flex items-center space-x-2">
-              <Image
-                src="/amitlogo.png"
-                alt="Logo"
-                width={20} // h-5 = 20px
-                height={20} // w-5 = 20px
-                className="h-5 w-5"
-              />
               <p>© 2026 Amit | All rights reserved.</p>
             </div>
             <div className="flex space-x-4">

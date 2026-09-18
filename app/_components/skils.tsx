@@ -47,24 +47,6 @@ const skills = [
     color: "#8b5cf6",
     logo: "/logos/rtk.png",
   },
-  {
-    name: "Node.js",
-    percentage: 60,
-    color: "#10b981",
-    logo: "/logos/nodejs.svg",
-  },
-  {
-    name: "Express.js",
-    percentage: 60,
-    color: "#4b5563",
-    logo: "/logos/expressjs.svg",
-  },
-  {
-    name: "MongoDB",
-    percentage: 50,
-    color: "#22c55e",
-    logo: "/logos/mongodb.png",
-  },
 ];
 
 export default function SkillSet() {
