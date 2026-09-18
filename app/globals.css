@@ -3,13 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+html {
+  scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +23,260 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+.clip-normal {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.clip-cut {
+  clip-path: polygon(0% 0%, 76% 0, 100% 24%, 100% 100%, 0 100%);
+}
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes change-text {
+  0% {
+    content: "Frontend Developer";
+  }
+  50% {
+    content: "UI Developer ";
+  }
+
+  100% {
+    content: "Website Designer ";
+  }
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.text {
+  font-size: 2rem;
+}
+.text::after {
+  display: block;
+  content: "";
+  /* animation-duration = number of keyframes * duration per keyframe */
+  animation: change-text 10s infinite;
+}
+.btn {
+  margin: 10px;
+  padding: 15px 18px;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+}
+.btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1447e6;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+/* glow */
+.btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* hover */
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn:active:after {
+  background: transparent;
+}
+
+.btn:active {
+  color: #000;
+  font-weight: bold;
+}
+
+/* From https://css.glass */
+/* body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+  position: relative;
+  overflow: hidden;
+  font-family: sans-serif;
+} */
+
+/* html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+} */
+
+body::before {
+  content: "";
+  position: fixed; /* Use fixed for true full screen */
+  inset: 0;
+  z-index: -1;
+
+  background: url("https://media.istockphoto.com/id/2158094628/photo/abstract-gradient-background-blending-deep-teal-and-green-hues-perfect-for-creating-calming.jpg?s=1024x1024&w=is&k=20&c=4dR0YcKqO61O5BcfWJ8u9cU8kjYQCuMZFOYGQtGtDus=")
+    no-repeat center center / cover;
+
+  filter: blur(4px);
+}
+
+.wrapper {
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+}
+
+/* h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+} */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  position: relative;
+  margin: 20px 0;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.input-field label {
+  display: flex;
+  justify-content: flex-start;
+
+  color: black;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.input-field input,
+.input-field textarea {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: blue;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label,
+.input-field textarea:focus ~ label,
+.input-field textarea:valid ~ label {
+  font-size: 0.8rem;
+  top: -10px;
+}
+
+.button1 {
+  margin-top: 20px;
+  background: blue;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 2px solid transparent;
+}
+
+.button1:hover {
+  color: black;
+  border-color: black;
+  background: hsla(236, 93%, 46%, 0.149);
 }
