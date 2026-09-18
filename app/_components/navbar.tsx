@@ -7,9 +7,9 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-50 py-3 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-500">
+    <div className="sticky top-0 z-50 py-3 bg-linear-to-r from-blue-200 via-blue-300 to-blue-500">
       {/* pl-1 = left space kam, pr-5 = right space same */}
-      <nav className="mx-2 h-16 pl-1 pr-5 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-500 rounded-full flex items-center justify-between border border-white shadow-md">
+      <nav className="mx-2 h-16 pl-1 pr-5 bg-linear-to-r from-blue-200 via-blue-300 to-blue-500 rounded-full flex items-center justify-between border border-white shadow-md">
         {/* Logo - left me chipka hua */}
         <Link href="/" className="flex items-center -ml-12">
           <Image
@@ -85,7 +85,7 @@ function Navbar() {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden mx-2 mt-2 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-500 rounded-2xl p-4 shadow-md">
+        <div className="md:hidden mx-2 mt-2 bg-linear-to-r from-blue-200 via-blue-300 to-blue-500 rounded-2xl p-4 shadow-md">
           <Link href="/" onClick={() => setIsOpen(false)}>
             <p className="block py-2 text-gray-700 hover:text-blue-700 text-sm font-medium">
               Home
