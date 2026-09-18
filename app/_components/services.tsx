@@ -10,7 +10,7 @@ import CanvasCard from "./canvasCard";
 
 function Services() {
   return (
-    <section className="py-15 mx-auto   text-center bg-linear-to-r from-blue-200 via-blue-300 to-blue-500">
+    <section className="py-15 mx-auto text-center bg-linear-to-r from-blue-200 via-blue-300 to-blue-500">
       <h2 className="text-4xl text-blue-700 font-bold mb-30 font-[cursive] relative inline-block px-4 py-4  rounded-xl animate-pulse">
         Services
       </h2>
