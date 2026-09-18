@@ -149,7 +149,7 @@ const Footer = () => {
                 </svg>
               </div>
 
-              <p>• Sirsi Road, Kanakpura, Jaipur, Rajasthan, 302012 </p>
+              <p>• Jaipur, Rajasthan, 302012 </p>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ const Footer = () => {
           </div>
 
           {/* Divider */}
-          <div className="border-1 border-gray-700 my-6"></div>
+          <div className="border border-gray-700 my-6"></div>
 
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row md:justify-between md:items-center">
@@ -251,7 +251,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom Copyright */}
-          <div className="border-1 border-gray-700 my-6"></div>
+          <div className="border border-gray-700 my-6"></div>
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 mt-6 space-y-2 md:space-y-0">
             <div className="flex items-center space-x-2">
               <Image
