@@ -1,18 +1,24 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowUp } from "lucide-react";
 
 export default function TopButton() {
   return (
-    <Link
-      href="/"
-      aria-label="Go to home page"
+    <button
+      type="button"
+      onClick={() =>
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        })
+      }
+      aria-label="Scroll to top"
       className="fixed bottom-5 right-5 z-50
-      bg-blue-600 text-white p-3 rounded-full
-      shadow-lg hover:bg-blue-700 transition"
+        rounded-full bg-blue-600 p-3
+        text-white shadow-lg
+        hover:bg-blue-700 transition"
     >
       <ArrowUp size={24} />
-    </Link>
+    </button>
   );
 }
